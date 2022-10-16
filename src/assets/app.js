@@ -48,17 +48,13 @@ d3.json(config.dataUrl).then(function (geojson) {
             .html(
                 `
             <div class="tooltip-title">
-                <div>Infracciones penales registradas</div>
+                <div>Comunidad Autónoma:</strong> ${
+                    data.properties.parametro
+                }</div>
             </div>
             <div class="tooltip-content">
                 <ul>
-                    <li><strong>Comunidad Autónoma:</strong> ${
-                        data.properties.parametro
-                    }</li>
-                    <li><strong>Fecha:</strong> ${data.properties.agno} - ${
-                    data.properties.periodo
-                }</li>
-                    <li><strong>Infracciones en lo que va del año:</strong> ${config.numberFormat.format(
+                    <li><strong>Número de infracciones:</strong> ${config.numberFormat.format(
                         data.properties.valor
                     )}</li>
                 </ul>
@@ -89,7 +85,7 @@ d3.json(config.dataUrl).then(function (geojson) {
         .legendColor()
         .labelFormat(d3.format(',d'))
         .shapeWidth(60)
-        .cells(7)
+        .cells(10)
         .orient('horizontal')
         .scale(colorScale)
         .shapePadding(10)
