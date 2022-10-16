@@ -4,7 +4,7 @@ const config = {
         height: 720,
     },
     legend: {
-        width: 525,
+        width: 725,
         height: 80,
     },
     projection: d3.geoMercator(),
