@@ -1,0 +1,177 @@
+﻿{
+    "Url": "www.epdata.es/robos-vehiculos-comunidad-comunidad/7cc14dc0-0ff3-42cc-8bf2-f2c0426d8d0b",
+    "Respuesta": {
+        "Id": "7cc14dc0-0ff3-42cc-8bf2-f2c0426d8d0b",
+        "Url": "www.epdata.es/robos-vehiculos-comunidad-comunidad/7cc14dc0-0ff3-42cc-8bf2-f2c0426d8d0b",
+        "Titulo": "Robos de vehículos, comunidad a comunidad",
+        "Subtitulo": "",
+        "Datos": {
+            "Metricas": [
+                {
+                    "Id": 0,
+                    "Nombre": "Infracciones penales registradas a nivel trimestral - Número de infracciones penales registradas en lo que va de año para total como tipo de delito registrado y Andalucía, Aragón, Asturias, Canarias, Cantabria, Castilla León, Castilla-La Mancha, Cataluña, Ceuta, Comunidad Valenciana, Extremadura, Galicia, Islas Baleares, La Rioja, Madrid, Melilla, Murcia, Navarra, País Vasco como comunidad autónoma",
+                    "SonDatosNumericos": true,
+                    "Fuente": "Ministerio del Interior",
+                    "Clasificacion": null,
+                    "Unidad": "Número de infracciones penales registradas en lo que va de año",
+                    "Escala": "Unidades",
+                    "EscalaFactorPotencia10": 0,
+                    "Datos": [
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Andalucía",
+                            "valor": 88408,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Aragón",
+                            "valor": 12016,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Asturias",
+                            "valor": 7589,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Canarias",
+                            "valor": 23658,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Cantabria",
+                            "valor": 5690,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Castilla y León",
+                            "valor": 21467,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Castilla-La Mancha",
+                            "valor": 19466,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Cataluña",
+                            "valor": 108560,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Ceuta",
+                            "valor": 891,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Comunidad Valenciana",
+                            "valor": 60463,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Extremadura",
+                            "valor": 7768,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Galicia",
+                            "valor": 24475,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Islas Baleares",
+                            "valor": 14062,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "La Rioja",
+                            "valor": 2675,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Madrid",
+                            "valor": 101888,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Melilla",
+                            "valor": 982,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Murcia",
+                            "valor": 15801,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "Navarra",
+                            "valor": 7450,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        },
+                        {
+                            "agno": 2022,
+                            "periodo": "Trimestre 1",
+                            "parametro": "País Vasco",
+                            "valor": 24796,
+                            "estado": "Definitivo",
+                            "notas": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
