@@ -65,17 +65,16 @@ d3.json(config.dataUrl).then(function (geojson) {
 
     // Se define una función para capturar el evento 'mouseover' del mouse
     // donde se cambia la opacidad el tooltip haciéndolo visible
-    // y se cambia la opacidad del path geográfico mientras el mouse este encima
-    // para dar una indicación al usuario que esta siendo seleccioando el elemento
+    // y se cambia la opacidad del path geográfico mientras el mouse esté encima
+    // para dar una indicación al usuario que esta siendo seleccionado el elemento
     const mouseover = function (event, data) {
         tooltip.style('opacity', 1)
         d3.select(this).style('opacity', 0.5).style('cursor', 'pointer')
     }
     // Se define una función flecha para capturar el evento 'mousemove' del mouse
-    // donde se renderiza el contenido el tooltip basado en la información geográfica
-    // seleccionada mostrando la comunidad y el número de infracciones
-    // también se añade un offset en la posición top y left del tooltip para mejorar
-    // su visualización
+    // donde se renderiza el contenido del tooltip basado en la información geográfica
+    // seleccionada, mostrando la comunidad y el número de infracciones, también se añade
+    // un offset en la posición top y left del tooltip para mejorar su visualización
     const mousemove = (event, data) => {
         tooltip
             .html(
@@ -107,14 +106,14 @@ d3.json(config.dataUrl).then(function (geojson) {
         d3.select(this).style('stroke', 'black').style('opacity', 1)
     }
 
-    // Se define una escala de colores tomand el valor mínimo y máximo de robos
+    // Se define una escala de colores tomando el valor mínimo y máximo de robos
     // y se define el limite inferior y superior de la escala de color
     const colorScale = d3
         .scaleLinear()
         .domain([891, 108560])
         .range(['#f7efd9', '#7a0177'])
 
-    // Se añade un objeto 'g' para renderizar la leyenda de colores identidicado
+    // Se añade un objeto 'g' para renderizar la leyenda de colores identificado
     // con la clase .legendLinear, se define el tamaño de letra y se adiciona un
     // offset de 20 en las posiciones top y left
     mapLegend
