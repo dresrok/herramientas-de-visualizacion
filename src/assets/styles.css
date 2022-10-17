@@ -18,8 +18,9 @@ main {
   align-self: center;
 }
 #map-legend {
-  align-self: flex-end;
-  margin-right: 25rem;
+  position: absolute;
+  bottom: 0;
+  left: 48%;
 }
 #bar-chart-title {
   align-self: center;
