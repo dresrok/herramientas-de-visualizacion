@@ -40,7 +40,7 @@ d3.json(config.dataUrl).then(function (geojson) {
 
     const mouseover = function (event, data) {
         tooltip.style('opacity', 1)
-        d3.select(this).style('stroke', 'black').style('opacity', 0.5)
+        d3.select(this).style('stroke', 'black').style('opacity', 0.5).style('cursor', 'pointer')
     }
 
     const mousemove = (event, data) => {
@@ -62,7 +62,7 @@ d3.json(config.dataUrl).then(function (geojson) {
         `
             )
             .style('left', event.pageX + 70 + 'px')
-            .style('top', event.pageY + 'px')
+            .style('top', event.pageY - 10 + 'px')
     }
 
     const mouseleave = function (event, data) {
