@@ -116,3 +116,75 @@ d3.json(config.dataUrl).then(function (geojson) {
         .ease(d3.easeBackInOut.overshoot(0.7))
         .style('opacity', 1)
 })
+
+
+// ------------- BAR CHART -------------
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 30, bottom: 90, left: 40},
+    width = 460 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#bar-chart")
+  .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Parse the Data
+d3.json("./datasets/las_cifras_del_crimen_en_españa.json").then((response) => {
+    const data  = response['Respuesta']['Datos']['Metricas'][0]['Datos'];
+    let dataVehicleTheft = [];
+
+    for (let row of data) {
+        let year = row['Agno'];
+        let parameter = row['Parametro'];
+        let value = row['Valor'];
+
+        if (parameter === 'Sustracciones de vehículos') {
+            dataVehicleTheft.push({year: '1er T - ' + year, value});
+        }
+    }
+
+     // X axis
+    var x = d3.scaleBand()
+        .range([ 0, width ])
+        .domain(dataVehicleTheft.map(function(d) { return d.year; }))
+        .padding(0.2);
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+        .attr("transform", "translate(-10,0)rotate(-45)")
+        .style("text-anchor", "end");
+
+    // Add Y axis
+    var y = d3.scaleLinear()
+        .domain([0, 13000])
+        .range([ height, 0]);
+    svg.append("g")
+        .call(d3.axisLeft(y));
+
+    // Bars
+    svg.selectAll("mybar")
+        .data(dataVehicleTheft)
+        .enter()
+        .append("rect")
+        .attr("x", function(d) { return x(d.year); })
+        .attr("width", x.bandwidth())
+        .attr("fill", "#69b3a2")
+        // no bar at the beginning thus:
+        .attr("height", function(d) { return height - y(0); }) // always equal to 0
+        .attr("y", function(d) { return y(0); })
+
+    // Animation
+    svg.selectAll("rect")
+        .transition()
+        .duration(800)
+        .attr("y", function(d) { return y(d.value); })
+        .attr("height", function(d) { return height - y(d.value); })
+        .delay(function(d, i){ return(i*1000) });
+});

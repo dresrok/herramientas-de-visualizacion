@@ -17,10 +17,13 @@ main {
   margin-top: 20px;
   align-self: center;
 }
-#map-legend {
-  position: absolute;
-  bottom: 0;
-  left: 42%;
+#bar-chart-title {
+  align-self: center;
+  text-align: center;
+}
+#bar-chart {
+  margin-top: 20px;
+  align-self: center;
 }
 .tooltip {
   background-color: white;
