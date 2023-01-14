@@ -51,7 +51,7 @@ const path = d3.geoPath(config.projection)
 * la información en la variable geojson
 */
 d3.json(config.dataUrl).then(function (geojson) {
-    // Se ajusta la proyección basado en los features del geojson 
+    // Se ajusta la proyección basado en los features del geojson
     config.projection.fitSize([config.map.width, config.map.height], geojson)
 
     // Se selecciona el identificador map y se añade un elemento div
@@ -123,7 +123,7 @@ d3.json(config.dataUrl).then(function (geojson) {
         .style('font-size', '0.8em')
 
     // Se inicializa el objeto leyenda, formateando las cifras numéricas con separador ','
-    // se configura su ancho, espaciado y orientación y se definen 10 clases de rangos 
+    // se configura su ancho, espaciado y orientación y se definen 10 clases de rangos
     // para los valores de robos de vehículos, por último se reutiliza la escala de colores
     const legendLinear = d3
         .legendColor()
@@ -162,7 +162,7 @@ d3.json(config.dataUrl).then(function (geojson) {
         .ease(d3.easeBackInOut.overshoot(0.7))
         .style('opacity', 1)
 
-    // Se añade una animación tenue para mostrar 
+    // Se añade una animación tenue para mostrar
     // la leyenda al cargar la página
     mapLegend
         .transition()
@@ -174,12 +174,12 @@ d3.json(config.dataUrl).then(function (geojson) {
 
 // ------------- BAR CHART -------------
 
-// set the dimensions and margins of the graph
+// variables para la definición de el tamaño del gráfico (incluye variables para proporción de las márgenes)
 var margin = {top: 10, right: 30, bottom: 90, left: 40},
     width = 460 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom;
 
-// append the svg object to the body of the page
+// Creación del objeto svg que se agregará al div bar-chart y se definen las margenes
 var svg = d3.select("#bar-chart")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -188,7 +188,8 @@ var svg = d3.select("#bar-chart")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-// Parse the Data
+// Carga de datos de JSON de crifras de crímenes y creación de las escalas y barras con la información obtenida
+// Nota: Los datos se cargarán desde un archivo de JSON descargado y almacenado en la carpeta del proyecto.
 d3.json("./datasets/las_cifras_del_crimen_en_españa.json").then((response) => {
     const data  = response['Respuesta']['Datos']['Metricas'][0]['Datos'];
     let dataVehicleTheft = [];
@@ -203,7 +204,7 @@ d3.json("./datasets/las_cifras_del_crimen_en_españa.json").then((response) => {
         }
     }
 
-     // X axis
+     // Definición del eje X
     var x = d3.scaleBand()
         .range([ 0, width ])
         .domain(dataVehicleTheft.map(function(d) { return d.year; }))
@@ -215,14 +216,14 @@ d3.json("./datasets/las_cifras_del_crimen_en_españa.json").then((response) => {
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end");
 
-    // Add Y axis
+    // Definición del eje Y
     var y = d3.scaleLinear()
         .domain([0, 13000])
         .range([ height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
 
-    // Bars
+    // Barras del gráfico
     svg.selectAll("mybar")
         .data(dataVehicleTheft)
         .enter()
@@ -234,7 +235,7 @@ d3.json("./datasets/las_cifras_del_crimen_en_españa.json").then((response) => {
         .attr("height", function(d) { return height - y(0); }) // always equal to 0
         .attr("y", function(d) { return y(0); })
 
-    // Animation
+    // Definición de la animación con una duración de 800 ms para la visualización de las barras
     svg.selectAll("rect")
         .transition()
         .duration(800)
