@@ -1,0 +1,12 @@
+[
+  { "sensor": "Sz", "temperatura": 10, "viento": 10 },
+  { "sensor": "Sa", "temperatura": 9.5, "viento": 50 },
+  { "sensor": "Sy", "temperatura": 9.0, "viento": 90 },
+  { "sensor": "Sb", "temperatura": 7.9, "viento": 150 },
+  { "sensor": "Sx", "temperatura": 7.5, "viento": 180 },
+  { "sensor": "Sc", "temperatura": 6.3, "viento": 200 },
+  { "sensor": "Sw", "temperatura": 5.5, "viento": 330 },
+  { "sensor": "Sd", "temperatura": 4.0, "viento": 450 },
+  { "sensor": "Sv", "temperatura": 2.2, "viento": 480 },
+  { "sensor": "Se", "temperatura": 4.2, "viento": 370 }
+]
